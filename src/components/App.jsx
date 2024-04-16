@@ -1,10 +1,12 @@
 import './App.css';
-import SearchForm from './SearchForm/SearchForm';
+import MoviesList from './MoviesList/MoviesList';
+import NavBar from './NavBar/NavBar';
 
 function App() {
   return (
     <>
-      <SearchForm />
+      <NavBar />
+      <MoviesList />
     </>
   );
 }
