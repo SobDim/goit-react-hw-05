@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReviewsById } from '../../services/API.JS';
-import { LineWave } from 'react-loader-spinner';
 
 const MovieReviews = () => {
-  const filmId = useParams();
+  const { filmId } = useParams();
   const [revives, setRevives] = useState([]);
   useEffect(() => {
     fetchReviewsById(filmId).then(data => setRevives(data));

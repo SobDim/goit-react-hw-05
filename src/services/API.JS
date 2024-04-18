@@ -20,8 +20,8 @@ const options = {
 
 export const fetchTrendingMovies = async () => {
   try {
-    const response = await axios.get('trending/movie/day', options);
-    return response.data.results;
+    const { data } = await axios.get('trending/movie/day', options);
+    return data.results;
   } catch (error) {
     console.log(error);
   }
@@ -40,7 +40,8 @@ export const fetchMoviesById = async filmID => {
 export const fetchReviewsById = async filmID => {
   try {
     const { data } = await axios.get(
-      `/movie/${filmID}/reviews?language=en-US&page=1`
+      `/movie/${filmID}/reviews?language=en-US&page=1`,
+      options
     );
     return data.results;
   } catch (error) {
@@ -50,8 +51,8 @@ export const fetchReviewsById = async filmID => {
 
 export const fetchCastsById = async filmID => {
   try {
-    const { data } = await axios.get(`/movie/${filmID}/credits`);
-    return data;
+    const { data } = await axios.get(`/movie/${filmID}/credits`, options);
+    return data.cast;
   } catch (error) {
     console.log(error);
   }

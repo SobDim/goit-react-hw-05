@@ -17,7 +17,10 @@ const MovieDetailsPage = () => {
   return (
     <>
       <div>
-        <img src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} />
+        <img
+          src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+          alt={`${film.original_title}`}
+        />
         <h3>{film.original_title}</h3>
         <p>User Score: {film.vote_average}</p>
         <p> Overview:{film.overview}</p>
