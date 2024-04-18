@@ -57,3 +57,15 @@ export const fetchCastsById = async filmID => {
     console.log(error);
   }
 };
+///
+export const fetchFilmByQuery = async query => {
+  try {
+    const { data } = await axios.get(
+      `search/movie?query=${query}&include_adult=true&language=en-US&page=1`,
+      options
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
