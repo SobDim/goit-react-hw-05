@@ -108,6 +108,10 @@ h1 {
   display: flex;
   margin-bottom: 1rem;
 
+  img {
+    width: 200px;
+  }
+
 }
 
 .info_text {
