@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchFilmByQuery } from '../services/API.JS';
 import SearchForm from '../components/SearchForm/SearchForm';
-import FinderFilmsList from '../components/FindedFilmsList/FindedFilmsList';
+import FinderFilmsList from '../components/FilmsListResult/FilmsListResult';
 
 const MoviesPage = () => {
   const [films, setFilms] = useState([]);
@@ -11,7 +11,7 @@ const MoviesPage = () => {
 
   const handleSearchMovies = async query => {
     const response = await fetchFilmByQuery(query);
-    setFilms(response);
+    setFilms(response.results);
   };
 
   useEffect(() => {
@@ -22,8 +22,7 @@ const MoviesPage = () => {
   }, [searchQ]);
 
   return (
-    <div>
-      <h2>MoviesPage</h2>
+    <div className="container">
       <SearchForm SearchQ={setSearchQ} />
       <FinderFilmsList films={films} />
     </div>

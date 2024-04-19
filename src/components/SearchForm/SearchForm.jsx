@@ -13,7 +13,9 @@ const SearchForm = ({ SearchQ }) => {
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <Form>
         <Field name="query" placeholder="Search movie..." />
-        <button type="submit">Search</button>
+        <button className="button" type="submit">
+          Search
+        </button>
       </Form>
     </Formik>
   );

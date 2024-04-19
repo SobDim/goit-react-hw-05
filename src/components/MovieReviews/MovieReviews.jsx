@@ -11,12 +11,14 @@ const MovieReviews = () => {
   return (
     <div>
       <ul>
-        {revives.map(revive => (
-          <li key={revive.id}>
-            <h4>{revive.author}</h4>
-            <p>{revive.content}</p>
-          </li>
-        ))}
+        {revives.length > 0
+          ? revives.map(revive => (
+              <li key={revive.id}>
+                <h4>{revive.author}</h4>
+                <p>{revive.content}</p>
+              </li>
+            ))
+          : "Sorry, there isn't any info"}
       </ul>
     </div>
   );
